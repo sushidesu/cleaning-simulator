@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Image, IconButton, Flex } from "@chakra-ui/core"
+import { Box, Flex, Image, IconButton, Avatar } from "@chakra-ui/core"
 import { Goods } from "../data"
 import Futon from "../images/futon.jpg"
 
@@ -22,7 +22,19 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction }) => (
       align="center"
       justify="center"
     >
-      <Image src={Futon} />
+      <Box position="relative">
+        <Avatar
+          position="absolute"
+          top="-4px"
+          right="-2px"
+          name={goods.point.toString()}
+          size="xs"
+          fontSize="1.08em"
+          backgroundColor="#abd7f0"
+          color="#fff"
+        />
+        <Image src={Futon} />
+      </Box>
     </Flex>
 
     {/* content */}

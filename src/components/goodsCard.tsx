@@ -26,16 +26,21 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction, clickIcon,
       justify="center"
     >
       <Box position="relative">
-        <Avatar
+        <Flex
           position="absolute"
-          top="-4px"
-          right="-2px"
-          name={goods.point.toString()}
+          top="-6px"
+          right="-4px"
           size="xs"
           fontSize="1.08em"
           backgroundColor="#abd7f0"
           color="#fff"
-        />
+          fontWeight="semibold"
+          width="30px"
+          height="30px"
+          borderRadius="50%"
+          justify="center"
+          align="center"
+        >{goods.point}</Flex>
         <Image src={Futon} />
       </Box>
     </Flex>

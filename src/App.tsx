@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from "react"
+import styled from "styled-components"
+import { Goods, beddings } from "./data"
+import { Result } from "./components/result"
 
-function App() {
+const PointWrapper = styled.div`
+  display: inline-block;
+  position: relative;
+  background-color: #dadada;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`
+
+const Point: React.FC = ({ children }) => (
+  <PointWrapper>
+    <span>{ children }</span>
+  </PointWrapper>
+)
+
+export default () => {
+  const [selected, setSelected] = useState<Goods[]>([])
+  const select = useCallback((goods: Goods) => () => {
+    setSelected(prev => [...prev, goods])
+  }, [setSelected])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <h1>Cleaning Simulator</h1>
 
-export default App;
+      <Result selectedGoods={selected} setSelectGoods={setSelected} />
+
+      <hr />
+
+      <ul>
+        {beddings.map((goods, i) => (
+          <li key={i}>{ goods.name }, { goods.price }円 <Point>{goods.point}</Point><button onClick={select(goods)}>+</button></li>
+        ))}
+      </ul>
+    </div>
+  )
+}

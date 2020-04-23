@@ -1,6 +1,7 @@
 import React, { useCallback } from "react"
-import { IconButton } from "@chakra-ui/core"
+import { Grid } from "@chakra-ui/core"
 import { Goods } from "../data"
+import { GoodsCard } from "./goodsCard"
 
 type ResultProps = {
   selectedGoods: Goods[]
@@ -14,11 +15,11 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, setSelectGoods })
 
   return (
     <div>
-      <ul>
+      <Grid templateColumns="repeat(6, 1fr)">
       {selectedGoods.map((goods, index) => (
-        <li key={index}>{ goods.name }<IconButton size="sm" onClick={remove(index)} icon="minus" aria-label="商品を削除" /></li>
+        <GoodsCard key={index} goods={goods} clickAction={remove(index)} />
       ))}
-      </ul>
+      </Grid>
       <p>合計</p>
       <p>{ selectedGoods.reduce((acc, goods) => acc + goods.price, 0) }円</p>
       <p>{ selectedGoods.reduce((acc, goods) => acc + goods.point, 0) }ポイント</p>

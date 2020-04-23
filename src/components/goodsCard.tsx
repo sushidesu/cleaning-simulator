@@ -1,14 +1,16 @@
 import React from "react"
-import { Box, Flex, Image, IconButton, Avatar } from "@chakra-ui/core"
+import { Box, Flex, Image, IconButton, IconButtonProps, Avatar } from "@chakra-ui/core"
 import { Goods } from "../data"
 import Futon from "../images/futon.jpg"
 
 type GoodsProps = {
   goods: Goods
   clickAction: () => void
+  clickIcon: IconButtonProps["icon"]
+  clickLabel: IconButtonProps["aria-label"]
 }
 
-export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction }) => (
+export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction, clickIcon, clickLabel }) => (
   <Flex
     direction="column"
     borderWidth="1px"
@@ -53,8 +55,8 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction }) => (
         bottom="0"
         right="0"
         size="sm"
-        icon="add"
-        aria-label="商品を追加"
+        icon={clickIcon}
+        aria-label={clickLabel}
         onClick={clickAction}
       />
     </Box>

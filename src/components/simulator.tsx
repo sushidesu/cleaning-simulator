@@ -20,7 +20,13 @@ export const Simulator = () => {
 
       <Grid gap={3} templateColumns="repeat(4, 1fr)">
         {beddings.map((goods, i) => (
-          <GoodsCard key={i} goods={goods} clickAction={select(goods)} />
+          <GoodsCard
+            key={i}
+            goods={goods}
+            clickAction={select(goods)}
+            clickIcon="add"
+            clickLabel="商品を追加"
+          />
         ))}
       </Grid>
     </div>

@@ -17,7 +17,13 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, setSelectGoods })
     <div>
       <Grid templateColumns="repeat(6, 1fr)">
       {selectedGoods.map((goods, index) => (
-        <GoodsCard key={index} goods={goods} clickAction={remove(index)} />
+        <GoodsCard
+          key={index}
+          goods={goods}
+          clickAction={remove(index)}
+          clickIcon="minus"
+          clickLabel="商品を削除"
+        />
       ))}
       </Grid>
       <p>合計</p>

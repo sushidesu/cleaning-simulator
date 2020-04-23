@@ -17,6 +17,7 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction, clickIcon,
     rounded="md"
     maxWidth="180px"
     position="relative"
+    backgroundColor="#fff"
   >
     {/* icon */}
     <Flex

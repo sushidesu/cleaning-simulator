@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react"
-import { Grid, Divider } from "@chakra-ui/core"
+import { Grid, Divider, Heading } from "@chakra-ui/core"
 import { Goods, beddings } from "../data"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
@@ -12,11 +12,11 @@ export const Simulator = () => {
 
   return (
     <div>
-      <h1>Cleaning Simulator</h1>
+      <Heading as="h1">Cleaning Simulator</Heading>
 
       <Result selectedGoods={selected} setSelectGoods={setSelected} />
 
-      <Divider />
+      <Divider margin="30px 0" />
 
       <Grid gap={3} templateColumns="repeat(4, 1fr)">
         {beddings.map((goods, i) => (

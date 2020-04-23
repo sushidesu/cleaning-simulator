@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Image, IconButton, IconButtonProps, Avatar } from "@chakra-ui/core"
+import { Box, Flex, Image, IconButton, IconButtonProps } from "@chakra-ui/core"
 import { Goods } from "../data"
 import Futon from "../images/futon.jpg"
 
@@ -52,7 +52,7 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction, clickIcon,
           {goods.name}
         </Box>
         <Box mt={2}>
-          {`${goods.price}円`}
+          {`${goods.price} 円`}
         </Box>
       </Flex>
 

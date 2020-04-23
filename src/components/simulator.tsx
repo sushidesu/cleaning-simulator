@@ -12,7 +12,7 @@ export const Simulator = () => {
 
   return (
     <div>
-      <Heading as="h1">Cleaning Simulator</Heading>
+      <Heading m={4} size="lg" as="h1">料金シミュレーター</Heading>
 
       <Result selectedGoods={selected} setSelectGoods={setSelected} />
 

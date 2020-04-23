@@ -1,4 +1,5 @@
 import React, { useCallback } from "react"
+import { IconButton } from "@chakra-ui/core"
 import { Goods } from "../data"
 
 type ResultProps = {
@@ -15,7 +16,7 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, setSelectGoods })
     <div>
       <ul>
       {selectedGoods.map((goods, index) => (
-        <li key={index}>{ goods.name }<button onClick={remove(index)}>-</button></li>
+        <li key={index}>{ goods.name }<IconButton size="sm" onClick={remove(index)} icon="minus" aria-label="商品を削除" /></li>
       ))}
       </ul>
       <p>合計</p>

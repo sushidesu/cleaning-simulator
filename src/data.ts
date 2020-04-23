@@ -41,6 +41,12 @@ export const beddings: Goods[] = [
     name: "肌掛け",
     point: 1.5,
     price: 2000,
+  },
+  {
+    type: "bedding",
+    name: "こたつ掛け",
+    point: 2.5,
+    price: 2000,
   }
 ]
 

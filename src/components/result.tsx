@@ -21,7 +21,13 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, type, selectedAre
   const totalPrice = totalGoodsPrice + postage * 2
 
   return (
-    <Box maxWidth="680px" margin="30px auto" padding="10px" borderWidth="1px" rounded="md">
+    <Box
+      maxWidth="680px"
+      margin="30px auto"
+      padding="12px 20px"
+      rounded="lg"
+      boxShadow="rgba(67, 63, 108, 0.1) 0px 10px 40px 2px"
+    >
       <Heading textAlign="center" as="h2" size="md">診断結果</Heading>
 
       <GridContainer mt={3} templateColumns="20% 1fr 20%" templateRows="repeat(2, 1fr)" rowGap={1} alignItems="center">

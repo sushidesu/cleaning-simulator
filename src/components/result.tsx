@@ -30,7 +30,11 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, type, selectedAre
     >
       <Heading textAlign="center" as="h2" size="md">診断結果</Heading>
 
-      <GridContainer mt={3} templateColumns="20% 1fr 20%" templateRows="repeat(2, 1fr)" rowGap={1} alignItems="center">
+      <GridContainer mt={3} templateColumns="20% 1fr 20%" templateRows="repeat(3, 1fr)" rowGap={1} alignItems="center">
+        <Text textAlign="center">ポイント</Text>
+        <div></div>
+        <Text textAlign="right">{`${selectedGoods.reduce((total, cur) => total + cur.point, 0)} ポイント`}</Text>
+
         <Text textAlign="center">クリーニング料金</Text>
         <Text margin="auto">{`${selectedGoods.length} 点`}</Text>
         <Text textAlign="right">{`計 ${totalGoodsPrice.toLocaleString()} 円`}</Text>

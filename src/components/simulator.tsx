@@ -7,9 +7,11 @@ import { Cart } from "./cart"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
 import { ModalAreaSelector } from "./modalAreaSelector"
+import { Container } from "./container"
 
-const Container = styled.div`
+const Wrapper = styled.div`
   position: relative;
+  margin-bottom: 30px;
 `
 
 export const Simulator = () => {
@@ -34,7 +36,7 @@ export const Simulator = () => {
     <div>
       <Heading m={4} size="lg" as="h1">料金シミュレーター</Heading>
       
-      <Container>
+      <Wrapper>
         <ModalAreaSelector setArea={setArea} />
 
         <Cart selectedGoods={goods} setSelectGoods={setGoods} />
@@ -48,18 +50,20 @@ export const Simulator = () => {
 
         <Divider margin="30px 0" />
 
-        <Grid gap={3} templateColumns="repeat(4, 1fr)">
-          {beddings.map((v, i) => (
-            <GoodsCard
-              key={i}
-              goods={v}
-              clickAction={selectGoods(v)}
-              clickIcon="add"
-              clickLabel="商品を追加"
-            />
-          ))}
-        </Grid>
-      </Container>
+        <Container containerSize="medium">
+          <Grid gap={3} templateColumns="repeat(4, 1fr)">
+            {beddings.map((v, i) => (
+              <GoodsCard
+                key={i}
+                goods={v}
+                clickAction={selectGoods(v)}
+                clickIcon="add"
+                clickLabel="商品を追加"
+              />
+            ))}
+          </Grid>
+        </Container>
+      </Wrapper>
     </div>
   )
 }

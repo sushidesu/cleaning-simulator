@@ -38,7 +38,7 @@ const ResultCard = styled(Box)`
     align-items: center;
   }
   .result {
-
+    font-size: 1.1em;
   }
 `
 

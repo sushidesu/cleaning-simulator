@@ -1,15 +1,22 @@
 import React, { useState, useCallback } from "react"
 import { Grid, Divider, Heading } from "@chakra-ui/core"
 import { Goods, beddings } from "../models/goods"
+import { Area } from "../models/area"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
-import { AreaSlector } from "./areaSelector"
+import { AreaSelector } from "./areaSelector"
 
 export const Simulator = () => {
   const [selected, setSelected] = useState<Goods[]>([])
-  const select = useCallback((goods: Goods) => () => {
+  const selectGoods = useCallback((goods: Goods) => () => {
     setSelected(prev => [...prev, goods])
   }, [setSelected])
+
+  const [area, setArea] = useState<Area>("北海道")
+  const selectArea = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selected = event.target.value as Area
+    setArea(selected)
+  }, [])
 
   return (
     <div>
@@ -17,7 +24,7 @@ export const Simulator = () => {
 
       <Result selectedGoods={selected} setSelectGoods={setSelected} />
 
-      <AreaSlector />
+      <AreaSelector selectedArea={area} setSelectedArea={selectArea} />
 
       <Divider margin="30px 0" />
 
@@ -26,7 +33,7 @@ export const Simulator = () => {
           <GoodsCard
             key={i}
             goods={goods}
-            clickAction={select(goods)}
+            clickAction={selectGoods(goods)}
             clickIcon="add"
             clickLabel="商品を追加"
           />

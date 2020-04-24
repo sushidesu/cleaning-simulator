@@ -61,7 +61,23 @@ export const Result: React.FC<ResultProps> = ({ selectedGoods, type, selectedAre
         <ResultCard mr={3}>
           <Text className="title">ポイント</Text>
           <Box className="content">
-            <Text>{`${selectedGoods.reduce((total, cur) => total + cur.point, 0)} ポイント`}</Text>
+          <Text>
+            <Flex
+              display="inline-flex"
+              size="xs"
+              fontSize="1.08em"
+              backgroundColor="#abd7f0"
+              color="#fff"
+              fontWeight="semibold"
+              width="44px"
+              height="44px"
+              borderRadius="50%"
+              justify="center"
+              align="center"
+              mr={2}
+            >{`${selectedGoods.reduce((total, cur) => total + cur.point, 0)}`}</Flex>
+            ポイント
+          </Text>
           </Box>
           <Text className="result">{type}</Text>
         </ResultCard>

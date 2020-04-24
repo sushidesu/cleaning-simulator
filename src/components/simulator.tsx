@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from "react"
 import { Grid, Divider, Heading } from "@chakra-ui/core"
-import { Goods, beddings } from "../data"
+import { Goods, beddings } from "../goods"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
+import { AreaSlector } from "./areaSelector"
 
 export const Simulator = () => {
   const [selected, setSelected] = useState<Goods[]>([])
@@ -15,6 +16,8 @@ export const Simulator = () => {
       <Heading m={4} size="lg" as="h1">料金シミュレーター</Heading>
 
       <Result selectedGoods={selected} setSelectGoods={setSelected} />
+
+      <AreaSlector />
 
       <Divider margin="30px 0" />
 

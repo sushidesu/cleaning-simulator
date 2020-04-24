@@ -5,7 +5,6 @@ import { Area } from "../models/area"
 import { Cart } from "./cart"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
-import { AreaSelector } from "./areaSelector"
 
 export const Simulator = () => {
   const [selected, setSelected] = useState<Goods[]>([])
@@ -25,9 +24,13 @@ export const Simulator = () => {
 
       <Cart selectedGoods={selected} setSelectGoods={setSelected} />
 
-      <Result selectedGoods={selected} />
-
-      <AreaSelector selectedArea={area} setSelectedArea={selectArea} />
+      <Result
+        selectedGoods={selected}
+        selectedArea={area}
+        setSelectedArea={selectArea}
+        type={"布団袋小"}
+        postage={2111}
+      />
 
       <Divider margin="30px 0" />
 

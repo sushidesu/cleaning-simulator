@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react"
 import { Grid, Divider, Heading } from "@chakra-ui/core"
-import { Goods, beddings } from "../goods"
+import { Goods, beddings } from "../models/goods"
 import { Result } from "./result"
 import { GoodsCard } from "./goodsCard"
 import { AreaSlector } from "./areaSelector"

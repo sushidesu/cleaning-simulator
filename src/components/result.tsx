@@ -1,6 +1,6 @@
 import React, { useCallback } from "react"
 import { Grid, Heading, Box, Text } from "@chakra-ui/core"
-import { Goods } from "../goods"
+import { Goods } from "../models/goods"
 import { GoodsCard } from "./goodsCard"
 
 type ResultProps = {

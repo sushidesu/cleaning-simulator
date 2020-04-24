@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Flex, Image, IconButton, IconButtonProps } from "@chakra-ui/core"
-import { Goods } from "../goods"
+import { Goods } from "../models/goods"
 import Futon from "../images/futon.jpg"
 
 type GoodsProps = {

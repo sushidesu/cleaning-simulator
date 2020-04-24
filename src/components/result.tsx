@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Heading, Box, Grid, Flex, Text } from "@chakra-ui/core"
 import { Goods } from "../models/goods"
-import { Area } from "../models/area"
+import { Area, POSTAGES } from "../models/area"
 import { AreaSelector, AreaSelectorProps } from "./areaSelector"
 
 type ResultProps = {
@@ -10,14 +10,14 @@ type ResultProps = {
   type: "布団袋小" | "布団袋大"
   selectedArea: Area
   setSelectedArea: AreaSelectorProps["setSelectedArea"]
-  postage: number
 }
 
 const GridContainer = styled(Grid)`
 `
 
-export const Result: React.FC<ResultProps> = ({ selectedGoods, type, selectedArea, setSelectedArea, postage }) => {
+export const Result: React.FC<ResultProps> = ({ selectedGoods, type, selectedArea, setSelectedArea }) => {
   const totalGoodsPrice = selectedGoods.reduce((acc, goods) => acc + goods.price, 0)
+  const postage = type === "布団袋小" ? POSTAGES[selectedArea].priceSmall : POSTAGES[selectedArea].priceLarge
   const totalPrice = totalGoodsPrice + postage * 2
 
   return (

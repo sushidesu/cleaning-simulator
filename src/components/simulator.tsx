@@ -29,7 +29,6 @@ export const Simulator = () => {
         selectedArea={area}
         setSelectedArea={selectArea}
         type={"布団袋小"}
-        postage={2111}
       />
 
       <Divider margin="30px 0" />

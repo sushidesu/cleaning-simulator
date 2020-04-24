@@ -52,7 +52,7 @@ export const GoodsCard: React.FC<GoodsProps> = ({ goods, clickAction, clickIcon,
           {goods.name}
         </Box>
         <Box mt={2}>
-          {`${goods.price} 円`}
+          {`${goods.price.toLocaleString()} 円`}
         </Box>
       </Flex>
 

@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "@emotion/styled"
 import { Box, BoxProps } from "@chakra-ui/core"
 
 type ContainerProps = {
